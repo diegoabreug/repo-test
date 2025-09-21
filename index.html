@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flores Amarillas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background: radial-gradient(1200px 600px at 50% -10%, #ffe28a, #fffce1 60%);
+      display:grid;
+      place-items:center;
+      height:100vh;
+      overflow:hidden;
+    }
+    .btn{
+      border:none;
+      border-radius:999px;
+      padding:16px 28px;
+      font-weight:700;
+      font-size:20px;
+      cursor:pointer;
+      background:linear-gradient(180deg, #ffe180, #ffc107);
+      color:#4b2e05;
+      box-shadow:0 10px 25px rgba(0,0,0,.12);
+      transition:transform .15s ease;
+      z-index:10;
+    }
+    .btn:hover{ transform: translateY(-2px); }
+    .stage{
+      position:fixed;
+      inset:0;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      opacity:0;
+      transform:scale(.98);
+      transition: opacity .8s ease, transform .8s ease;
+      pointer-events:none;
+    }
+    .show .stage{ opacity:1; transform:scale(1); }
+    .flowers{
+      display:flex;
+      justify-content:center;
+      animation: fadeUp 1s ease forwards;
+    }
+    .flowers img{
+      width:200px;
+      height:auto;
+      opacity:0;
+      transform:translateY(40px) scale(.8);
+      animation: grow 1s ease forwards;
+    }
+    .message{
+      text-align:center;
+      margin-top:20px;
+      opacity:0;
+      transform: translateY(10px);
+      animation: fadeUp .9s 1.3s ease forwards;
+    }
+    .message h1{
+      margin:0 0 6px;
+      font-size:50px;
+      background: linear-gradient(90deg, #b45309, #78350f);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    @keyframes fadeUp{
+      to{ opacity:1; transform: translateY(0); }
+    }
+    @keyframes grow{
+      to{ opacity:1; transform:translateY(0) scale(1); }
+    }
+    .show .btn{ opacity:0; pointer-events:none; }
+  </style>
+</head>
+<body>
+  <button id="startBtn" class="btn">🌻 Quiero flores amarillas</button>
+  <section id="stage" class="stage">
+    <div class="flowers">
+      <img src="diego abreu.png" alt="Girasol">
+    </div>
+    <div class="message">
+      <h1>Te amo beba</h1>
+      <p>Esta es tu flor amarilla 🌻</p>
+    </div>
+  </section>
+
+  <script>
+    const btn = document.getElementById('startBtn');
+    const stage = document.getElementById('stage');
+    btn.addEventListener('click', () => {
+      document.body.classList.add('show');
+    });
+  </script>
+</body>
+</html>
