@@ -1,0 +1,505 @@
+/* static/css/style.css */
+/* ===========================
+   Smart Panel Control System - Main Styles
+   Estilo: Eaton Brightlayer Home (Modern Blue & Glassmorphism)
+   =========================== */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    /* Degradado estilo Eaton: Cian arriba a Azul Profundo abajo */
+    background: linear-gradient(180deg, #26c6da 0%, #01579b 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+    /* Centrar el contenido en pantallas grandes */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.container {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+    /* Efecto Glassmorphism (Cristal) */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+/* ===========================
+   Header
+   =========================== */
+
+header {
+    /* Fondo transparente para integrarse con el azul global */
+    background: transparent;
+    color: white;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header-left h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 2px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-subtitle {
+    font-size: 11px;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+.connection-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    background: rgba(0, 0, 0, 0.2); /* Fondo oscuro sutil */
+    border-radius: 25px;
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #888;
+    animation: pulse 2s infinite;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.status-dot.connected {
+    background: #00ff00;
+    box-shadow: 0 0 15px #00ff00;
+}
+
+.status-dot.disconnected {
+    background: #ff0000;
+    box-shadow: 0 0 15px #ff0000;
+}
+
+#status-text {
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+/* ===========================
+   Panel Container (Area de la imagen)
+   =========================== */
+
+.panel-container {
+    position: relative;
+    padding: 20px;
+    /* Fondo claro semitransparente sobre el body azul */
+    background: rgba(255, 255, 255, 0.05);
+    min-height: auto;
+    max-height: 600px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.panel-background {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 300px); /* Ajuste para que se vea bien */
+    max-height: 800px;
+    border-radius: 15px;
+    overflow: hidden;
+    /* Contenedor de la imagen con sombra y borde suave */
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#panel-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+/* ===========================
+   Module & Branch Cards (Overlays)
+   =========================== */
+
+/* Posicionamiento */
+.module-overlay, .branch-overlay {
+    position: absolute;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+}
+
+/* Tarjetas de Módulo - Estilo Glassmorphism limpio */
+.module-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border-radius: 8px;
+    padding: 4px;
+    min-width: 200px;
+    max-width: 220px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.module-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.module-card.offline {
+    background: rgba(220, 220, 220, 0.85);
+    opacity: 0.8;
+    border: 1px solid rgba(150, 150, 150, 0.5);
+}
+
+.module-header {
+    text-align: center;
+    margin-bottom: 2px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.module-header h3 {
+    font-size: 10px;
+    color: #01579b; /* Azul Eaton */
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 7px;
+    font-weight: 700;
+    margin-left: 3px;
+    vertical-align: middle;
+}
+.status-badge.online { background: #28a745; color: white; }
+.status-badge.offline { background: #dc3545; color: white; }
+
+.dcm-config-btn {
+    background: none;
+    border: none;
+    font-size: 10px;
+    cursor: pointer;
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+    transition: color 0.2s;
+}
+.dcm-config-btn:hover { color: #000; }
+
+/* Lista de Ramas (Branches) */
+.branches-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+}
+
+.branch-item {
+    background: #f4f6f8;
+    border-radius: 4px;
+    padding: 3px 4px;
+    border-left: 3px solid #b0bec5; /* Gris por defecto */
+    transition: all 0.2s ease;
+}
+
+.branch-item:hover {
+    background: #e1f5fe; /* Azul muy claro */
+}
+
+.branch-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.branch-name {
+    font-size: 9px;
+    font-weight: 700;
+    color: #455a64;
+}
+
+/* Botones Pequeños de Relay */
+.relay-button-small {
+    padding: 1px 6px;
+    border: none;
+    border-radius: 3px;
+    font-size: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Estilos ON/OFF más planos y modernos */
+.relay-button-small[data-state="off"] {
+    background: #e0e0e0;
+    color: #555;
+    border: 1px solid #ccc;
+}
+.relay-button-small[data-state="on"] {
+    background: #01579b; /* Azul Eaton */
+    color: white;
+    border: 1px solid #01579b;
+}
+
+.relay-button-small:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.branch-stats {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.branch-stats .stat-value {
+    font-size: 10px;
+    font-weight: 700;
+    color: #0277bd;
+}
+
+/* Placeholder para ramas no conectadas */
+.branch-item.placeholder {
+    opacity: 0.5;
+    background: #fafafa;
+    border-left-color: #eee;
+}
+
+/* Tarjeta Controlador RPi */
+.rpi-card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(40, 167, 69, 0.5);
+    min-width: 160px;
+}
+.rpi-status-container { padding: 6px; display: flex; justify-content: center; }
+.rpi-status-display {
+    display: flex; align-items: center; gap: 6px;
+    padding: 4px 10px; background: #e8f5e9;
+    border-radius: 12px; border: 1px solid #c8e6c9;
+}
+.rpi-status-text { font-size: 10px; color: #2e7d32; font-weight: 700; }
+
+/* ===========================
+   Summary Panel (Dashboard Lateral/Inferior)
+   =========================== */
+
+.summary-panel {
+    padding: 15px 25px;
+    background: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.summary-card {
+    /* Tarjeta oscura semitransparente para contraste sobre fondo azul */
+    background: rgba(0, 0, 0, 0.25);
+    color: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.summary-card h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.summary-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+}
+
+.stat-item {
+    /* Items internos semitransparentes */
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.2s ease;
+}
+
+.stat-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.stat-icon { font-size: 24px; opacity: 0.9; }
+.stat-content { display: flex; flex-direction: column; }
+.stat-label { font-size: 11px; opacity: 0.8; text-transform: uppercase; font-weight: 500; color: #ddd; }
+.stat-value { font-size: 18px; font-weight: 700; color: white; letter-spacing: -0.5px; }
+
+/* ===========================
+   Controls Footer (Botones Maestros)
+   =========================== */
+
+.controls {
+    padding: 20px 25px;
+    /* Fondo ligeramente más oscuro para anclar el diseño */
+    background: rgba(0, 0, 0, 0.1); 
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+}
+
+.control-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    /* Estilo Botón Eaton: Negro Sólido */
+    background: #000000;
+    color: white;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Indicadores sutiles de color para Master ON/OFF */
+.master-btn#master-on { border-bottom: 3px solid #26de81; }
+.master-btn#master-off { border-bottom: 3px solid #ff4757; }
+#refresh { border-bottom: 3px solid #3498db; }
+
+.control-btn:hover {
+    transform: translateY(-3px);
+    background: #222; /* Gris muy oscuro */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.control-btn:active { transform: translateY(-1px); }
+.btn-icon { font-size: 16px; }
+
+/* ===========================
+   Modals & Extras
+   =========================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+}
+.modal.active { display: flex; align-items: center; justify-content: center; }
+
+.modal-content {
+    background: white;
+    border-radius: 12px;
+    width: 90%; max-width: 450px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    overflow: hidden;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header {
+    background: #01579b; /* Azul Eaton */
+    color: white;
+    padding: 15px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.modal-header h2 { font-size: 16px; font-weight: 600; margin: 0; }
+.modal-close { background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
+
+.modal-body { padding: 20px; }
+.config-section { background: #f8f9fa; border-radius: 8px; padding: 15px; margin-bottom: 15px; border: 1px solid #eee; }
+.config-section h3 { font-size: 12px; color: #555; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-bottom: 10px; text-transform: uppercase; }
+
+.config-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.config-row label { flex: 0 0 120px; font-size: 12px; font-weight: 600; color: #444; }
+.config-row input, .config-row select { flex: 1; padding: 6px; border: 1px solid #ccc; border-radius: 4px; }
+
+.config-apply-btn {
+    background: #01579b; color: white; border: none;
+    padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 11px;
+}
+.config-apply-btn:hover { background: #0277bd; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body { padding: 10px; display: block; }
+    .header-left h1 { font-size: 18px; }
+    .panel-container { padding: 10px; min-height: 500px; }
+    
+    .module-overlay {
+        position: relative !important;
+        transform: none !important;
+        top: auto !important; left: auto !important; right: auto !important; bottom: auto !important;
+        margin-bottom: 15px;
+    }
+    
+    .module-card { width: 100%; max-width: none; min-width: auto; }
+    
+    .controls { padding: 15px; flex-direction: column; }
+    .control-btn { width: 100%; justify-content: center; }
+}
