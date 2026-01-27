@@ -234,34 +234,44 @@ header {
 
 /* Lista de Ramas (Branches) */
 .branches-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3px;
+    display: flex;             /* Usamos Flexbox en lugar de Grid */
+    flex-direction: column;    /* Ordenamos los elementos en columna vertical */
+    gap: 8px;                  /* Un poco más de espacio entre cada rama */
+    width: 100%;
 }
 
 .branch-item {
     background: #f4f6f8;
-    border-radius: 4px;
-    padding: 3px 4px;
-    border-left: 3px solid #b0bec5; /* Gris por defecto */
+    border-radius: 6px;        /* Bordes un poco más redondeados */
+    padding: 8px 10px;         /* Más espacio interno para que se vea mejor */
+    border-left: 4px solid #b0bec5; 
     transition: all 0.2s ease;
-}
-
-.branch-item:hover {
-    background: #e1f5fe; /* Azul muy claro */
-}
-
-.branch-info {
-    display: flex;
+    display: flex;             /* Para alinear contenido interno mejor */
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2px;
+}
+
+/* Ajustamos la info interna para que se vea bien en fila horizontal */
+.branch-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0;          /* Quitamos margen inferior */
+    flex: 1;
 }
 
 .branch-name {
-    font-size: 9px;
+    font-size: 11px;           /* Un poco más grande para leer mejor */
     font-weight: 700;
     color: #455a64;
+    min-width: 60px;           /* Ancho fijo para alinear nombres */
+}
+
+/* Ajuste de estadísticas a la derecha */
+.branch-stats {
+    display: flex;
+    justify-content: flex-end;
+    min-width: 40px;
 }
 
 /* Botones Pequeños de Relay */
@@ -318,7 +328,7 @@ header {
 .rpi-card {
     background: rgba(255, 255, 255, 0.95);
     border: 2px solid rgba(40, 167, 69, 0.5);
-    min-width: 160px;
+    min-width: 300px;
 }
 .rpi-status-container { padding: 6px; display: flex; justify-content: center; }
 .rpi-status-display {
