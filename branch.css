@@ -1,0 +1,44 @@
+/* static/css/style.css */
+
+/* Busca esta sección y reemplázala por completo: */
+
+.branches-container {
+    display: flex;             /* Usamos Flexbox en lugar de Grid */
+    flex-direction: column;    /* Ordenamos los elementos en columna vertical */
+    gap: 8px;                  /* Un poco más de espacio entre cada rama */
+    width: 100%;
+}
+
+.branch-item {
+    background: #f4f6f8;
+    border-radius: 6px;        /* Bordes un poco más redondeados */
+    padding: 8px 10px;         /* Más espacio interno para que se vea mejor */
+    border-left: 4px solid #b0bec5; 
+    transition: all 0.2s ease;
+    display: flex;             /* Para alinear contenido interno mejor */
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Ajustamos la info interna para que se vea bien en fila horizontal */
+.branch-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0;          /* Quitamos margen inferior */
+    flex: 1;
+}
+
+.branch-name {
+    font-size: 11px;           /* Un poco más grande para leer mejor */
+    font-weight: 700;
+    color: #455a64;
+    min-width: 60px;           /* Ancho fijo para alinear nombres */
+}
+
+/* Ajuste de estadísticas a la derecha */
+.branch-stats {
+    display: flex;
+    justify-content: flex-end;
+    min-width: 40px;
+}
