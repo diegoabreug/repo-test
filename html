@@ -10,7 +10,6 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
         <header>
             <div class="header-left">
                 <h1>⚡ CH Smart Panel</h1>
@@ -21,16 +20,10 @@
             </div>
         </header>
 
-        <!-- Main Panel Display -->
         <main class="panel-container">
-            <!-- Background Image Container -->
             <div class="panel-background">
-                <!-- Smart Panel Background Image -->
                 <img src="/static/images/smart_panel_updated.png" alt="Smart Panel" id="panel-image">
                 
-                <!-- Module Overlays (4 modules, each with 2 branches) -->
-                
-                <!-- Module 1 -->
                 <div class="module-overlay" id="module-1" style="top: 40%; left: 37%;">
                     <div class="module-card" data-module="1">
                         <div class="module-header">
@@ -38,7 +31,6 @@
                             <button class="dcm-config-btn" data-module="1" title="Configure DCM">⚙️</button>
                         </div>
                         <div class="branches-container">
-                            <!-- Branch 1 -->
                             <div class="branch-item" data-module="1" data-branch="1">
                                 <div class="branch-info">
                                     <span class="branch-name">Branch 1</span>
@@ -51,7 +43,6 @@
                                     <span class="stat-value power">0W</span>
                                 </div>
                             </div>
-                            <!-- Branch 2 -->
                             <div class="branch-item" data-module="1" data-branch="2">
                                 <div class="branch-info">
                                     <span class="branch-name">Branch 2</span>
@@ -64,37 +55,34 @@
                                     <span class="stat-value power">0W</span>
                                 </div>
                             </div>
-                            <!-- Branch 3 (Placeholder) -->
-                            <div class="branch-item placeholder" data-module="1" data-branch="3">
+                            <div class="branch-item" data-module="1" data-branch="3">
                                 <div class="branch-info">
                                     <span class="branch-name">Branch 3</span>
-                                    <button class="relay-button-small disabled" data-module="1" data-branch="3" data-state="off" disabled>
-                                        <span class="button-icon">🚫</span>
-                                        <span class="button-text">N/A</span>
+                                    <button class="relay-button-small" data-module="1" data-branch="3" data-state="off">
+                                        <span class="button-icon">⏻</span>
+                                        <span class="button-text">OFF</span>
                                     </button>
                                 </div>
                                 <div class="branch-stats">
-                                    <span class="stat-value power" style="opacity: 0.5;">Not Connected</span>
+                                    <span class="stat-value power">0W</span>
                                 </div>
                             </div>
-                            <!-- Branch 4 (Placeholder) -->
-                            <div class="branch-item placeholder" data-module="1" data-branch="4">
+                            <div class="branch-item" data-module="1" data-branch="4">
                                 <div class="branch-info">
                                     <span class="branch-name">Branch 4</span>
-                                    <button class="relay-button-small disabled" data-module="1" data-branch="4" data-state="off" disabled>
-                                        <span class="button-icon">🚫</span>
-                                        <span class="button-text">N/A</span>
+                                    <button class="relay-button-small" data-module="1" data-branch="4" data-state="off">
+                                        <span class="button-icon">⏻</span>
+                                        <span class="button-text">OFF</span>
                                     </button>
                                 </div>
                                 <div class="branch-stats">
-                                    <span class="stat-value power" style="opacity: 0.5;">Not Connected</span>
+                                    <span class="stat-value power">0W</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Module 2 -->
                 <div class="module-overlay" id="module-2" style="top: 40%; right: 25%;">
                     <div class="module-card" data-module="2">
                         <div class="module-header">
@@ -102,7 +90,6 @@
                             <button class="dcm-config-btn" data-module="2" title="Configure DCM">⚙️</button>
                         </div>
                         <div class="branches-container">
-                            <!-- Branch 1 -->
                             <div class="branch-item" data-module="2" data-branch="1">
                                 <div class="branch-info">
                                     <span class="branch-name">Branch 5</span>
@@ -115,7 +102,6 @@
                                     <span class="stat-value power">0W</span>
                                 </div>
                             </div>
-                            <!-- Branch 2 -->
                             <div class="branch-item" data-module="2" data-branch="2">
                                 <div class="branch-info">
                                     <span class="branch-name">Branch 6</span>
@@ -128,49 +114,22 @@
                                     <span class="stat-value power">0W</span>
                                 </div>
                             </div>
-                            <!-- Branch 3 (Placeholder) -->
-                            <div class="branch-item placeholder" data-module="2" data-branch="3">
+                            <div class="branch-item" data-module="2" data-branch="3">
                                 <div class="branch-info">
                                     <span class="branch-name">Branch 7</span>
-                                    <button class="relay-button-small disabled" data-module="2" data-branch="3" data-state="off" disabled>
-                                        <span class="button-icon">🚫</span>
-                                        <span class="button-text">N/A</span>
+                                    <button class="relay-button-small" data-module="2" data-branch="3" data-state="off">
+                                        <span class="button-icon">⏻</span>
+                                        <span class="button-text">OFF</span>
                                     </button>
                                 </div>
                                 <div class="branch-stats">
-                                    <span class="stat-value power" style="opacity: 0.5;">Not Connected</span>
+                                    <span class="stat-value power">0W</span>
                                 </div>
                             </div>
-                            <!-- Branch 4 (Placeholder) -->
-                            <div class="branch-item placeholder" data-module="2" data-branch="4">
+                            <div class="branch-item" data-module="2" data-branch="4">
                                 <div class="branch-info">
                                     <span class="branch-name">Branch 8</span>
-                                    <button class="relay-button-small disabled" data-module="2" data-branch="4" data-state="off" disabled>
-                                        <span class="button-icon">🚫</span>
-                                        <span class="button-text">N/A</span>
-                                    </button>
-                                </div>
-                                <div class="branch-stats">
-                                    <span class="stat-value power" style="opacity: 0.5;">Not Connected</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Module 3 -->
-                <div class="module-overlay" id="module-3" style="bottom: 25%; left: 37%;">
-                    <div class="module-card" data-module="3">
-                        <div class="module-header">
-                            <h3>🔌 DCM 3 <span class="status-badge offline" id="status-badge-3">OFFLINE</span></h3>
-                            <button class="dcm-config-btn" data-module="3" title="Configure DCM">⚙️</button>
-                        </div>
-                        <div class="branches-container">
-                            <!-- Branch 1 -->
-                            <div class="branch-item" data-module="3" data-branch="1">
-                                <div class="branch-info">
-                                    <span class="branch-name">Branch 9</span>
-                                    <button class="relay-button-small" data-module="3" data-branch="1" data-state="off">
+                                    <button class="relay-button-small" data-module="2" data-branch="4" data-state="off">
                                         <span class="button-icon">⏻</span>
                                         <span class="button-text">OFF</span>
                                     </button>
@@ -179,114 +138,10 @@
                                     <span class="stat-value power">0W</span>
                                 </div>
                             </div>
-                            <!-- Branch 2 -->
-                            <div class="branch-item" data-module="3" data-branch="2">
-                                <div class="branch-info">
-                                    <span class="branch-name">Branch 10</span>
-                                    <button class="relay-button-small" data-module="3" data-branch="2" data-state="off">
-                                        <span class="button-icon">⏻</span>
-                                        <span class="button-text">OFF</span>
-                                    </button>
-                                </div>
-                                <div class="branch-stats">
-                                    <span class="stat-value power">0W</span>
-                                </div>
-                            </div>
-                            <!-- Branch 3 (Placeholder) -->
-                            <div class="branch-item placeholder" data-module="3" data-branch="3">
-                                <div class="branch-info">
-                                    <span class="branch-name">Branch 11</span>
-                                    <button class="relay-button-small disabled" data-module="3" data-branch="3" data-state="off" disabled>
-                                        <span class="button-icon">🚫</span>
-                                        <span class="button-text">N/A</span>
-                                    </button>
-                                </div>
-                                <div class="branch-stats">
-                                    <span class="stat-value power" style="opacity: 0.5;">Not Connected</span>
-                                </div>
-                            </div>
-                            <!-- Branch 4 (Placeholder) -->
-                            <div class="branch-item placeholder" data-module="3" data-branch="4">
-                                <div class="branch-info">
-                                    <span class="branch-name">Branch 12</span>
-                                    <button class="relay-button-small disabled" data-module="3" data-branch="4" data-state="off" disabled>
-                                        <span class="button-icon">🚫</span>
-                                        <span class="button-text">N/A</span>
-                                    </button>
-                                </div>
-                                <div class="branch-stats">
-                                    <span class="stat-value power" style="opacity: 0.5;">Not Connected</span>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Module 4 -->
-                <div class="module-overlay" id="module-4" style="bottom: 25%; right: 25%;">
-                    <div class="module-card" data-module="4">
-                        <div class="module-header">
-                            <h3>🔌 DCM 4 <span class="status-badge offline" id="status-badge-4">OFFLINE</span></h3>
-                            <button class="dcm-config-btn" data-module="4" title="Configure DCM">⚙️</button>
-                        </div>
-                        <div class="branches-container">
-                            <!-- Branch 1 -->
-                            <div class="branch-item" data-module="4" data-branch="1">
-                                <div class="branch-info">
-                                    <span class="branch-name">Branch 13</span>
-                                    <button class="relay-button-small" data-module="4" data-branch="1" data-state="off">
-                                        <span class="button-icon">⏻</span>
-                                        <span class="button-text">OFF</span>
-                                    </button>
-                                </div>
-                                <div class="branch-stats">
-                                    <span class="stat-value power">0W</span>
-                                </div>
-                            </div>
-                            <!-- Branch 2 -->
-                            <div class="branch-item" data-module="4" data-branch="2">
-                                <div class="branch-info">
-                                    <span class="branch-name">Branch 14</span>
-                                    <button class="relay-button-small" data-module="4" data-branch="2" data-state="off">
-                                        <span class="button-icon"></span>
-                                        <span class="button-text">OFF</span>
-                                    </button>
-                                </div>
-                                <div class="branch-stats">
-                                    <span class="stat-value power">0W</span>
-                                </div>
-                            </div>
-                            <!-- Branch 3 (Placeholder) -->
-                            <div class="branch-item placeholder" data-module="4" data-branch="3">
-                                <div class="branch-info">
-                                    <span class="branch-name">Branch 15</span>
-                                    <button class="relay-button-small disabled" data-module="4" data-branch="3" data-state="off" disabled>
-                                        <span class="button-icon">🚫</span>
-                                        <span class="button-text">N/A</span>
-                                    </button>
-                                </div>
-                                <div class="branch-stats">
-                                    <span class="stat-value power" style="opacity: 0.5;">Not Connected</span>
-                                </div>
-                            </div>
-                            <!-- Branch 4 (Placeholder) -->
-                            <div class="branch-item placeholder" data-module="4" data-branch="4">
-                                <div class="branch-info">
-                                    <span class="branch-name">Branch 16</span>
-                                    <button class="relay-button-small disabled" data-module="4" data-branch="4" data-state="off" disabled>
-                                        <span class="button-icon">🚫</span>
-                                        <span class="button-text">N/A</span>
-                                    </button>
-                                </div>
-                                <div class="branch-stats">
-                                    <span class="stat-value power" style="opacity: 0.5;">Not Connected</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Raspberry Pi Controller Module -->
                 <div class="module-overlay" id="rpi-controller" style="bottom: 8%; left: 50%;">
                     <div class="module-card rpi-card">
                         <div class="module-header">
@@ -303,7 +158,6 @@
             </div>
         </main>
 
-        <!-- Summary Dashboard -->
         <aside class="summary-panel">
             <div class="summary-card">
                 <h3>📊 Panel Overview</h3>
@@ -326,21 +180,20 @@
                         <span class="stat-icon">💡</span>
                         <div class="stat-content">
                             <span class="stat-label">Active Branches</span>
-                            <span class="stat-value" id="active-branches">0 / 16</span>
+                            <span class="stat-value" id="active-branches">0 / 8</span>
                         </div>
                     </div>
                 </div>
             </div>
         </aside>
 
-        <!-- Control Buttons -->
         <footer class="controls">
             <button class="control-btn master-btn" id="master-on">
                 <span class="btn-icon">🔛</span>
                 <span class="btn-text">Master ON</span>
             </button>
             <button class="control-btn master-btn" id="master-off">
-                <span class="btn-icon"></span>
+                <span class="btn-icon">⏻</span>
                 <span class="btn-text">Master OFF</span>
             </button>
             <button class="control-btn" id="refresh">
@@ -350,7 +203,6 @@
         </footer>
     </div>
 
-    <!-- DCM Configuration Modal -->
     <div id="dcm-config-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -412,7 +264,6 @@
         </div>
     </div>
 
-    <!-- Scripts -->
     <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
     <script src="/static/js/websocket.js"></script>
     <script src="/static/js/animations.js"></script>
