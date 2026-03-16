@@ -1,7 +1,0 @@
-devteam@raspberrypi:~ $ curl -I http://archieve.rasberrypi.com/debian/dists/trixie/InRelease
-HTTP/1.1 403 Forbidden
-Content-Type: text/html
-Server: Zscaler/6.2
-Cache-Control: no-cache
-Access-Control-Allow-Origin: *
-Content-length: 17707
